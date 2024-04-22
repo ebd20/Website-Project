@@ -132,7 +132,8 @@
         <!-- Killed the blog -->
 
 
-                    <!-- Call to action-->
+                    <!-- Call to action  <- this used to be a non-working email submission box (in the template), but I grabbed the email section of the form that I use
+                    on the contacts page to get this to work correctly.  Now it's super cool. -->
                     <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
                         <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                             <div class="mb-4 mb-xl-0">
@@ -140,10 +141,35 @@
                                 <div class="text-white-50">Sign up for our newsletter for the latest updates.</div>
                             </div>
                             <div class="ms-xl-4">
-                                <div class="input-group mb-2">
-                                    <input class="form-control" type="text" placeholder="Email address..." aria-label="Email address..." aria-describedby="button-newsletter" />
-                                    <button class="btn btn-outline-light" id="button-newsletter" type="button">Sign up</button>
+                                <form id="contactForm" data-sb-form-api-token="a04ce020-823a-4051-81be-926096961da5">
+
+
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                    <label for="email">Email address</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                 </div>
+
+
+                                    <!-- Submit success message-->
+                                    <!---->
+                                    <!-- This is what your users will see when the form-->
+                                    <!-- has successfully submitted-->
+                                    <div class="d-none" id="submitSuccessMessage">
+                                        <div class="text-center mb-3">
+                                            <div class="fw-bolder">Email submission successful!</div>
+                                            <br />
+                                        </div>
+                                    </div>
+                                    <!-- Submit error message-->
+                                    <!---->
+                                    <!-- This is what your users will see when there is-->
+                                    <!-- an error submitting the form-->
+                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                    <!-- Submit Button-->
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                                </form>
                                 <div class="small text-white-50">We care about privacy, and will never share your data.</div>
                             </div>
                         </div>
@@ -151,7 +177,6 @@
                 </div>
             </section>
         </main>
-
 
 
         <!-- Footer-->
@@ -173,5 +198,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
